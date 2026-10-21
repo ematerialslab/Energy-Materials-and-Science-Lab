@@ -237,6 +237,57 @@ footer b{color:#fff;font-family:var(--head);font-size:17px;letter-spacing:.02em}
 .steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
 .steps li::before{counter-increment:s;content:counter(s);width:30px;height:30px;border-radius:50%;border:1px solid rgba(56,224,176,.6);color:#38e0b0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px}
 @media (max-width:860px){.cgrid{grid-template-columns:1fr}}
+
+.sel{user-select:all}
+.maplink{display:inline-flex;margin-top:22px;text-decoration:none;font-weight:600;color:#fff;background:var(--accent);padding:12px 20px;border-radius:999px}
+.jbox{background:var(--night);color:var(--on-night);border:none}
+.jbox .label{color:#38e0b0}
+.jbox p{color:var(--on-night-muted)}
+.steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:30px;height:30px;border-radius:50%;border:1px solid rgba(56,224,176,.6);color:#38e0b0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px}
+@media (max-width:860px){.cgrid{grid-template-columns:1fr}}
+
+/* E dark glass */
+.eglass{position:relative;overflow:hidden;border-radius:28px;background:radial-gradient(600px 400px at 85% 10%,rgba(47,107,255,.35),transparent 70%),radial-gradient(500px 400px at 10% 100%,rgba(56,224,176,.18),transparent 70%),var(--night);color:var(--on-night);padding:56px}
+.eglass canvas{position:absolute;inset:0;width:100%;height:100%}
+.ein{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.ein h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,5.5vw,72px);line-height:.95;margin:0}
+.ein h3 em{color:#7fb0ff}
+.ein p.sub{color:var(--on-night-muted);margin-top:18px;max-width:40ch}
+.glist{display:grid;gap:12px}
+.gl{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(151,166,194,.2);border-radius:16px;padding:16px 18px;backdrop-filter:blur(6px);transition:background .25s,transform .25s}
+.gl:hover{background:rgba(127,176,255,.12);transform:translateX(4px)}
+.gl .i{width:44px;height:44px;border-radius:12px;background:rgba(56,224,176,.14);color:#38e0b0;display:flex;align-items:center;justify-content:center}
+.gl .label{color:var(--on-night-muted);font-size:10.5px}
+.gl b{display:block;font-weight:500;font-size:15.5px;margin-top:2px}
+@media (max-width:900px){.ein{grid-template-columns:1fr}.eglass{padding:32px 22px}}
+
+</style>
+<style>
+.opt{padding-block:64px 80px;border-bottom:8px solid #eef1f6}
+.otag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;padding:7px 12px;border-radius:999px;background:#ffd84d;color:#3b2f00;font-weight:500}
+.odesc{color:var(--muted);margin:10px 0 32px;max-width:64ch}
+.sel{user-select:all}
+.bico{width:44px;height:44px;border-radius:12px;background:#eef4ff;color:var(--accent);display:flex;align-items:center;justify-content:center}
+/* C icon cards */
+.chead{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:34px}
+.chead h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(44px,6vw,80px);line-height:.95;margin:0}
+.chead h3 em{color:var(--accent)}
+.chead p{color:var(--muted);font-size:17px}
+.ccards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cc{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,box-shadow .3s}
+.cc:hover{transform:translateY(-4px);box-shadow:0 30px 60px -36px rgba(13,19,36,.45)}
+.cc .bico{background:var(--night);color:#7fb0ff}
+.cc .label{color:var(--muted);font-size:10.5px}
+.cc p{font-size:15.5px;font-weight:500;line-height:1.45}
+.ccollab{margin-top:22px;background:var(--night);color:var(--on-night);border-radius:20px;padding:30px 34px;display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+.ccollab b{font-family:var(--head);font-size:22px;font-weight:600}
+.ccollab span{color:var(--on-night-muted);display:block;margin-top:4px}
+.ccollab .sel{font-family:var(--head);font-size:20px;border-bottom:2px solid #38e0b0;padding-bottom:3px}
+@media (max-width:1000px){.ccards{grid-template-columns:1fr 1fr}.chead{grid-template-columns:1fr}}
+@media (max-width:520px){.ccards{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -244,30 +295,32 @@ footer b{color:#fff;font-family:var(--head);font-size:17px;letter-spacing:.02em}
   <a class="word" href="index.html"><b>ENERGY MATERIALS LAB.</b><small>Chosun University · Department of Materials Science and Engineering</small></a>
   <ul class="menu"><li><a href="index.html">Home</a></li><li><a href="advisor.html">Advisor</a></li><li><a href="members.html">Members</a></li><li><a href="research.html">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="news.html">News</a></li><li><a href="contact.html" aria-current="page" style="color:#fff;background:rgba(127,176,255,.16)">Contact</a></li></ul>
 </div></header>
-<div class="phead"><canvas id="cv-bg" aria-hidden="true"></canvas><div class="wrap"><div class="label">Contact</div><h1>Get in <em>touch</em></h1><p>We welcome collaboration with academic and industry partners, and enquiries from prospective students and researchers.</p></div></div>
-<main><section class="blk"><div class="wrap cgrid">
-<div class="cbox"><div class="label" style="color:var(--accent)">Address</div><h2>Energy Materials Lab</h2>
-<div class="crow"><span class="label">Department</span><span>Materials Science and Engineering, Chosun University</span></div>
-<div class="crow"><span class="label">Lab</span><span>Room 5119, 5th floor, Engineering Building 2, College of Engineering</span></div>
-<div class="crow"><span class="label">Address</span><span class="sel">309 Pilmun-daero, Dong-gu, Gwangju 61452, Republic of Korea</span></div>
-<div class="crow"><span class="label">Email</span><span class="sel">hpark@chosun.ac.kr</span></div>
-<div class="crow"><span class="label">Phone</span><span><span class="sel">+82-62-230-7203</span></span></div>
-<a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Chosun+University+Engineering+Building+2+Gwangju" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>
-<div class="cbox jbox"><div class="label">Join the lab</div><h2>Open positions</h2>
-<p>We welcome motivated M.S. and Ph.D. students and postdoctoral researchers in battery materials and electrochemistry.</p>
-<ol class="steps"><li><span>Email your CV and a one-page statement of research interests to <b style="user-select:all">hpark@chosun.ac.kr</b></span></li>
-<li><span>Shortlisted applicants are invited for an online or in-person interview</span></li>
-<li><span>Successful applicants receive details on admission or appointment</span></li></ol></div>
-</div></section></main>
+<div class="phead"><canvas id="cv-bg" aria-hidden="true"></canvas><div class="wrap"><div class="label">Contact</div><h1>Get in <em>touch</em></h1><p>We welcome collaboration with academic and industry partners, and visits to the lab.</p></div></div>
+<main><section class="blk"><div class="wrap"><div class="eglass"><canvas id="cv-e" aria-hidden="true"></canvas><div class="ein"><div><div class="label" style="color:#38e0b0">Contact</div><h3>Let’s build better <em>batteries</em> together.</h3><p class="sub">For research collaboration, industry partnerships or lab visits, reach Prof. Hyunjung Park directly.</p></div>
+<div class="glist"><div class="gl"><span class="i"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg></span><div><span class="label">Email</span><b class="sel">hpark@chosun.ac.kr</b></div></div>
+<div class="gl"><span class="i"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 3h3l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2z"/></svg></span><div><span class="label">Phone</span><b class="sel">+82-62-230-7203</b></div></div>
+<div class="gl"><span class="i"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h12v17M3 21h18M14 12h.01"/></svg></span><div><span class="label">Lab</span><b>Room 5119, Engineering Building 2, Chosun University</b></div></div>
+<div class="gl"><span class="i"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><div><span class="label">Address</span><b>309 Pilmun-daero, Dong-gu, Gwangju 61452, South Korea</b></div></div></div></div></div></div></section></main>
 <footer><div class="wrap">
-  <div><b>ENERGY MATERIALS LAB.</b><br>Room 5119, Engineering Building 2, Chosun University<br>309 Pilmun-daero, Dong-gu, Gwangju 61452, Republic of Korea</div>
+  <div><b>ENERGY MATERIALS LAB.</b><br>Room 5119, Engineering Building 2, Chosun University<br>309 Pilmun-daero, Dong-gu, Gwangju 61452, South Korea</div>
   <div>hpark@chosun.ac.kr<br>© 2026 Energy Materials Lab</div>
 </div></footer>
 <script>
 (function(){const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const cv=document.getElementById('cv-bg');const ctx=cv.getContext('2d');let W=0,H=0;
 function f(){const r=cv.getBoundingClientRect();const d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);}new ResizeObserver(f).observe(cv);f();
-function draw(t){ctx.clearRect(0,0,W,H);ctx.lineWidth=1;for(let k=0;k<22;k++){ctx.beginPath();const base=k/21*H*1.2-H*.1;for(let x=0;x<=W;x+=8){const y=base+Math.sin(x*.004+t*.15+k*.35)*28+Math.sin(x*.011-t*.1+k)*10;x?ctx.lineTo(x,y):ctx.moveTo(x,y);}ctx.strokeStyle=`rgba(127,176,255,${.05+.05*Math.sin(k*.6+t*.2)**2})`;ctx.stroke();}}
-function tick(ts){draw(ts/1000);if(!reduce)requestAnimationFrame(tick);}requestAnimationFrame(tick);})();
+const PL=[];for(let i=0;i<7;i++)PL.push({x:Math.random(),y:.15+Math.random()*.75,v:.0006+Math.random()*.0008,amp:10+Math.random()*24,ph:Math.random()*6,sz:8+Math.random()*8,tr:[]});
+function plane(x,y,s,ang){ctx.save();ctx.translate(x,y);ctx.rotate(ang);ctx.beginPath();ctx.moveTo(s,0);ctx.lineTo(-s,-s*.6);ctx.lineTo(-s*.45,0);ctx.lineTo(-s,s*.6);ctx.closePath();ctx.fillStyle='rgba(232,238,249,.9)';ctx.fill();ctx.beginPath();ctx.moveTo(s,0);ctx.lineTo(-s*.45,0);ctx.strokeStyle='rgba(127,176,255,.8)';ctx.lineWidth=1;ctx.stroke();ctx.restore();}
+function tick(ts){const t=ts/1000;ctx.clearRect(0,0,W,H);PL.forEach(p=>{if(!reduce)p.x+=p.v;if(p.x>1.08){p.x=-.08;p.tr=[];p.y=.15+Math.random()*.75;}
+ const x=p.x*W,y=p.y*H+Math.sin(t*1.2+p.ph)*p.amp,dy=Math.cos(t*1.2+p.ph)*p.amp*1.2*.02;p.tr.push([x,y]);if(p.tr.length>60)p.tr.shift();
+ p.tr.forEach(([tx,ty],i)=>{if(i%3)return;ctx.fillStyle=`rgba(127,176,255,${i/60*.45})`;ctx.fillRect(tx,ty,1.6,1.6);});plane(x,y,p.sz,Math.atan2(dy,1));});
+ if(!reduce)requestAnimationFrame(tick);}
+requestAnimationFrame(tick);})();
 </script>
+<script>(function(){const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const cv=document.getElementById('cv-e');const ctx=cv.getContext('2d');let W=0,H=0;
+function f(){const r=cv.getBoundingClientRect();const d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);}new ResizeObserver(f).observe(cv);f();
+const P=[];for(let i=0;i<55;i++)P.push({x:Math.random(),y:Math.random(),v:.004+Math.random()*.008,r:.6+Math.random()*1.4});
+function t(ts){const tt=ts/1000;ctx.clearRect(0,0,W,H);P.forEach(p=>{if(!reduce){p.y-=p.v*.1;p.x+=Math.sin(tt*.3+p.r*9)*.0002;if(p.y<-.02){p.y=1.02;p.x=Math.random();}}});
+ctx.lineWidth=.6;for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const dx=(P[i].x-P[j].x)*W,dy=(P[i].y-P[j].y)*H,d=Math.hypot(dx,dy);if(d<110){ctx.strokeStyle=`rgba(127,176,255,${(1-d/110)*.1})`;ctx.beginPath();ctx.moveTo(P[i].x*W,P[i].y*H);ctx.lineTo(P[j].x*W,P[j].y*H);ctx.stroke();}}
+P.forEach(p=>{ctx.fillStyle=`rgba(160,200,255,${.25+p.r*.12})`;ctx.beginPath();ctx.arc(p.x*W,p.y*H,p.r,0,7);ctx.fill();});if(!reduce)requestAnimationFrame(t);}requestAnimationFrame(t);})();</script>
 </body>
 </html>
