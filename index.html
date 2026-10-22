@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Energy Materials Lab</title>
+<title>Energy Materials and Science Laboratory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
@@ -152,8 +152,10 @@ footer b{color:#fff;font-family:var(--head);font-size:17px;letter-spacing:.02em}
 .join .wrap{grid-template-columns:1fr!important;justify-items:center;text-align:center;padding-block:40px 20px}
 .join .serif{font-size:clamp(52px,8vw,120px);max-width:13ch;margin-top:20px}
 .join .serif em{color:#38e0b0}
+.join .wrap>div{width:100%;text-align:center}.join .serif{margin-left:auto!important;margin-right:auto!important}.join .soc{justify-content:center}
 .join p{color:var(--on-night-muted)!important;margin-left:auto;margin-right:auto}
-.join .mail{justify-self:center!important;color:var(--on-night);border-bottom-color:#38e0b0;margin-top:30px}
+.join .mail{justify-self:center!important;color:var(--on-night);border-bottom:none!important;padding-bottom:10px;margin-top:30px;position:relative}
+.join .wrap>.mail{width:fit-content}.join .mail::after{content:"";position:absolute;left:50%;bottom:0;width:100%;height:2px;border-radius:2px;background:#38e0b0;transform:translateX(-50%)}
 .soc{display:flex;align-items:center;gap:12px;margin-top:40px;color:var(--on-night-muted)}
 .soc .bar{width:180px;height:6px;border-radius:999px;background:rgba(151,166,194,.2);overflow:hidden}
 .soc .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-2),#38e0b0);border-radius:999px}
@@ -191,17 +193,16 @@ a.area:hover .more{transform:translateX(4px)}
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="word" href="index.html"><b>ENERGY MATERIALS LAB.</b><small>Chosun University · Department of Materials Science and Engineering</small></a>
+  <a class="word" href="index.html"><b>ENERGY MATERIALS AND SCIENCE LABORATORY</b><small>Chosun University · Department of Materials Science and Engineering</small></a>
   <ul class="menu"><li><a href="index.html" aria-current="page" style="color:#fff;background:rgba(127,176,255,.16)">Home</a></li><li><a href="advisor.html">Advisor</a></li><li><a href="members.html">Members</a></li><li><a href="research.html">Research</a></li><li><a href="publications.html">Publications</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul>
 </div></header>
 
 <div class="hero">
   <canvas id="crystal" aria-label="Rotating 3D model of a layered cathode crystal with lithium ions moving between layers" role="img"></canvas>
   <div class="wrap">
-    <div class="tagline label rise"><span class="dots"><i></i><i></i><i></i></span>Energy Materials Laboratory · EML</div>
+    <div class="tagline label rise"><span class="dots"><i></i><i></i><i></i></span>Energy Materials and Science Laboratory</div>
     <h1 class="rise d1">Energy Materials for a <span class="hl">Sustainable</span> Future.</h1>
-    <p class="sub rise d2">Design · Synthesize · Understand · Innovate. 
-      We develop materials for advanced lithium-ion and all-solid-state batteries, and recover them from spent cells.</p>
+    <p class="sub rise d2">Design · Synthesize · Understand · Innovate.<br>We develop materials for advanced lithium-ion and all-solid-state batteries, and recover them from spent cells.</p>
     <a class="scroll label rise d3" href="#direction"><span class="line"></span>Scroll to explore</a>
   </div>
 </div>
@@ -239,15 +240,15 @@ a.area:hover .more{transform:translateX(4px)}
 <section class="join anim"><canvas id="cv-pulse" aria-hidden="true"></canvas><div class="wrap">
   <div><div class="label" style="color:#38e0b0">Join us</div>
     <h2 class="serif">Charging the <em>future</em>, for the next generation.</h2>
-    <p>We welcome motivated M.S. and Ph.D. students and postdoctoral researchers. Send your CV and a short note on your research interests.</p></div>
+    <p>We work with academic and industry partners on next-generation battery materials. Get in touch to explore research collaborations.</p></div>
   <div class="soc label" aria-hidden="true">Next generation <span class="bar"><i id="socbar"></i></span><b id="socval">0%</b></div>
   <div class="mail">hpark@chosun.ac.kr</div>
 </div></section>
 </main>
 
 <footer><div class="wrap">
-  <div><b>ENERGY MATERIALS LAB.</b><br>Room 5119, Engineering Building 2, Chosun University<br>309 Pilmun-daero, Dong-gu, Gwangju 61452, Republic of Korea</div>
-  <div>hpark@chosun.ac.kr<br>© 2026 Energy Materials Lab</div>
+  <div><b>ENERGY MATERIALS AND SCIENCE LABORATORY</b><br>Room 5119, Engineering Building 2, Chosun University<br>309 Pilmun-daero, Dong-gu, Gwangju 61452, South Korea</div>
+  <div>hpark@chosun.ac.kr<br>© 2026 Energy Materials and Science Laboratory</div>
 </div></footer>
 
 <script>
